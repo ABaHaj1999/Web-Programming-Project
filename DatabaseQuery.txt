@@ -1,0 +1,23 @@
+CREATE TABLE `racers` (
+  `RacerID` varchar(4) NOT NULL DEFAULT '',
+  `CarID` varchar(4) NOT NULL DEFAULT '',
+  `RacerFirstName` varchar(20) NOT NULL DEFAULT '',
+  `RacerLastName` varchar(20) NOT NULL DEFAULT '',
+  `RacerAge` varchar(2) NOT NULL DEFAULT '',
+  `RacerCarColor` varchar(20) NOT NULL DEFAULT '',
+  `RacerPic` varchar(20) DEFAULT '',
+  `RacerCarNumber` varchar(3) DEFAULT '',
+  PRIMARY KEY (`RacerID`) USING BTREE,
+  KEY `CarID` (`CarID`),
+  CONSTRAINT `CarID` FOREIGN KEY (`CarID`) REFERENCES `allowablecars` (`CarID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+
+CREATE TABLE `allowablecars` (
+  `CarID` varchar(4) NOT NULL DEFAULT '',
+  `CarName` varchar(20) NOT NULL DEFAULT '',
+  `CarCompanyName` varchar(20) NOT NULL DEFAULT '',
+  `CarModel` varchar(20) NOT NULL DEFAULT '',
+  `CarPic` varchar(20) DEFAULT '',
+  PRIMARY KEY (`CarID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
