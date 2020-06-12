@@ -1,7 +1,7 @@
 <?php
 require_once('config/all.php');
 
-if (isset($_POST['racers'])) {
+if (isset($_POST['insert'])) {
     $insertsql = "INSERT INTO `racers` (`RacerID`, `CarID`, `RacerFirstName`, `RacerLastName`, `RacerAge`, `RacerCarColor`, `RacerPic`, `RacerCarNumber`) 
     VALUES ('".$_POST['RacerID']."', '".$_POST['CarID']."', '".$_POST['RacerFirstName']."', '".$_POST['RacerLastName']."', '".$_POST['RacerAge']."', '".$_POST['RacerCarColor']."', '".$_POST['RacerPic']."', '".$_POST['RacerCarNumber']."')";
 
@@ -54,8 +54,7 @@ if (isset($_POST['racers'])) {
       <label for="RacerPic">Profile Picture</label>
       <input name="RacerPic" type="text" />
     </div>
-    <button type="submit" class="btn btn-default">Insert</button>
-
+    <button type="submit" class="btn btn-default" name="insert">Insert</button>
     
   </form>
 <?php } ?>

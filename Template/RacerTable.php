@@ -14,7 +14,7 @@ $counter = 1;
 
 <form name="insertRacer" action="insertRacer.php" method="post">
     <div class="form-group" align="center">
-        <button type="submit" class="btn btn-default">New Racer</button>
+        <button type="submit" class="btn btn-default" name="newRacer">New Racer</button>
     </div>
 </form>
 
