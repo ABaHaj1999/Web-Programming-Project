@@ -2,33 +2,35 @@
 require_once('config/all.php');
 
 if (isset($_POST['insert'])) {
-    $insertsql = "INSERT INTO `racers` (`RacerID`, `CarID`, `RacerFirstName`, `RacerLastName`, `RacerAge`, `RacerCarColor`, `RacerPic`, `RacerCarNumber`) 
-    VALUES ('".$_POST['RacerID']."', '".$_POST['CarID']."', '".$_POST['RacerFirstName']."', '".$_POST['RacerLastName']."', '".$_POST['RacerAge']."', '".$_POST['RacerCarColor']."', '".$_POST['RacerPic']."', '".$_POST['RacerCarNumber']."')";
 
-    $result = mysqli_query($virtual_con, $insertsql);
-    $to = "RacerTable.php";
-    if ($result != NULL) {
-        //delete  Success
-        $msg = "Insert was Success";
-    } else {
-        //delete failure
-        $msg = "Insert is not successful";
-    }
-    goto2($to, $msg);
+  $insertsql = "INSERT INTO `racers` (`RacerID`, `CarID`, `RacerFirstName`, `RacerLastName`, `RacerAge`, `RacerCarColor`, `RacerPic`, `RacerCarNumber`) 
+    VALUES ('" . $_POST['RacerID'] . "', '" . $_POST['CarID'] . "', '" . $_POST['RacerFirstName'] . "', '" . $_POST['RacerLastName'] . "', '" . $_POST['RacerAge'] . "', '" . $_POST['RacerCarColor'] . "', '" . $_POST['RacerPic'] . "', '" . $_POST['RacerCarNumber'] . "')";
+
+  $result = mysqli_query($virtual_con, $insertsql);
+  $to = "RacerTable.php";
+  if ($result != NULL) {
+    //delete  Success
+    $msg = "Insert was Success";
+  } else {
+    //delete failure
+    $msg = "Insert is not successful";
+  }
+  goto2($to, $msg);
 } else {
-    $sqlchkrow = "select max(RacerID) as m from racers";
-    $result = mysqli_query($virtual_con, $sqlchkrow);
-    $row = mysqli_fetch_assoc($result);
-    $maxval = $row['m'];
-  ?>  
-    <form name="insertRacer" action="insertRacer.php" method="post">
+  $sqlchkrow = "select max(RacerID) as m from racers";
+  $result = mysqli_query($virtual_con, $sqlchkrow);
+  $row = mysqli_fetch_assoc($result);
+  $maxval = $row['m'];
+?>
+  <form name="insertRacer" action="insertRacer.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="RacerID">Racer ID</label>
       <input readonly name="RacerID" type="text" value="<?php echo $maxval + 1; ?>" />
     </div>
     <div class="form-group">
       <label for="CarID">Car ID</label>
-      <input name="CarID" type="text" />
+      <input name="CarID" type="text"/>
+   
     </div>
     <div class="form-group">
       <label for="RacerFirstName">First Name</label>
@@ -52,9 +54,11 @@ if (isset($_POST['insert'])) {
     </div>
     <div class="form-group">
       <label for="RacerPic">Profile Picture</label>
-      <input name="RacerPic" type="text" />
+      <input name="RacerPic" type="file" />
     </div>
     <button type="submit" class="btn btn-default" name="insert">Insert</button>
-    
   </form>
 <?php } ?>
+
+
+
