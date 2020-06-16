@@ -27,6 +27,7 @@ $counter = 1;
                 <th scope="col">Sponsor ID</th>
                 <th scope="col">Sponsor Picture</th>
                 <th scope="col">Sponsor Name</th>
+                <th scope="col">Sponsor Position</th>
                 <th scope="col">Delete</>
                 <th scope="col">Update</th>
             </tr>
@@ -42,6 +43,7 @@ $counter = 1;
                     <td><?php echo $row['SponsorID']; ?></td>
                     <td><img src="<?php echo $row['SponsorPic']; ?>" width="110" height="40"></td>
                     <td><?php echo $row['SponsorName']; ?></td>
+                    <td><?php echo $row['SponsorPosition']; ?></td>
                     <td><a href="deleteSponsor.php?delete=<?php echo $row['SponsorID']; ?>">Delete</a></td>
                     <td><a href="updateSponsor.php?SponsorID=<?php echo $row['SponsorID']; ?>">Update</a></td>
                 </tr>

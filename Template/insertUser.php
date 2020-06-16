@@ -4,7 +4,7 @@ $con = mysqli_connect("localhost", "root", "", "webproject");
 
 if (isset($_POST['but_upload'])) {
     
-    $insertsql = "insert into users (UserID, UserName, UserEmail) Values ('" . $_POST['UserID'] . "', '" . $_POST['UserName'] . "', '" . $_POST['UserEmail'] . "')";
+    $insertsql = "insert into users (UserID, UserName, UserPasswd, UserEmail) Values ('" . $_POST['UserID'] . "', '" . $_POST['UserName'] . "', '" . $_POST['UserPasswd'] . "', '" . $_POST['UserEmail'] . "')";
     $result = mysqli_query($virtual_con, $insertsql);
     $to = "UserTable.php";
     if ($result != NULL) {
@@ -30,6 +30,10 @@ if (isset($_POST['but_upload'])) {
         <div class="form-group">
             <label for="UserName">User Name</label>
             <input name="UserName" type="text" />
+        </div>
+        <div class="form-group">
+            <label for="UserPasswd">User Password</label>
+   or         <input name="UserPasswd" type="text" />
         </div>
         <div class="form-group">
             <label for="UserEmail">User Email</label>

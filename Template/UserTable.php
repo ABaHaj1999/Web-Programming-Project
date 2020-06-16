@@ -26,6 +26,7 @@ $counter = 1;
                 <th scope="col">No</th>
                 <th scope="col">User ID</th>
                 <th scope="col">User Name</th>
+                <th scope="col">User Password</th>
                 <th scope="col">User Email</th>
                 <th scope="col">Delete</>
                 <th scope="col">Update</th>
@@ -41,6 +42,7 @@ $counter = 1;
                         $counter++;  ?></td>
                     <td><?php echo $row['UserID']; ?></td>
                     <td><?php echo $row['UserName']; ?></td>
+                    <td><?php echo $row['UserPasswd']; ?></td>
                     <td><?php echo $row['UserEmail']; ?></td>
                     <td><a href="deleteUser.php?delete=<?php echo $row['UserID']; ?>">Delete</a></td>
                     <td><a href="updateUser.php?UserID=<?php echo $row['UserID']; ?>">Update</a></td>

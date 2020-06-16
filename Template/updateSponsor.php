@@ -35,7 +35,7 @@ if (isset($_GET['SponsorID'])) {
         move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $name);
     }
 
-    $insertsql = "UPDATE `sponsors` SET `SponsorName`='" . $_POST['SponsorName'] . "', `SponsorPic`='" . $image . "' WHERE `SponsorID`=".$_POST['SponsorID'];
+    $insertsql = "UPDATE `sponsors` SET `SponsorName`='" . $_POST['SponsorName'] . "', `SponsorPic`='" . $image . "', `SponsorPosition`='" . $_POST['SponsorPosition'] . "' WHERE `SponsorID`=".$_POST['SponsorID'];
 
 
     $result = mysqli_query($virtual_con, $insertsql);
@@ -60,6 +60,10 @@ if (isset($_GET['SponsorID'])) {
     <div class="form-group">
         <label for="SponsorName">Sponsor Name</label>
         <input name="SponsorName" type="text" value="<?php echo $row['SponsorName']; ?>" />
+    </div>
+    <div class="form-group">
+        <label for="SponsorPosition">Sponsor Position</label>
+        <input name="SponsorPosition" type="text" value="<?php echo $row['SponsorPosition']; ?>" />
     </div>
     <input type='file' name='file' />
     <input type='submit' value='Update' name='but_update'>

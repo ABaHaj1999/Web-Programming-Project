@@ -27,7 +27,7 @@ if (isset($_POST['but_upload'])) {
         move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $name);
     }
 
-    $insertsql = "insert into sponsors (SponsorID, SponsorName, SponsorPic) Values ('" . $_POST['SponsorID'] . "', '" . $_POST['SponsorName'] . "', '" . $image . "')";
+    $insertsql = "insert into sponsors (SponsorID, SponsorName, SponsorPic, SponsorPosition) Values ('" . $_POST['SponsorID'] . "', '" . $_POST['SponsorName'] . "', '" . $image . "', '".$_POST['SponsorPosition']."')";
 
 
     $result = mysqli_query($virtual_con, $insertsql);
@@ -56,6 +56,10 @@ if (isset($_POST['but_upload'])) {
         <div class="form-group">
             <label for="SponsorName">Sponsor Name</label>
             <input name="SponsorName" type="text" />
+        </div>
+        <div class="form-group">
+            <label for="SponsorPosition">Sponsor Position</label>
+            <input name="SponsorPosition" type="text" />
         </div>
         <input type='file' name='file' />
         <input type='submit' value='Save' name='but_upload'>

@@ -9,7 +9,7 @@ if (isset($_GET['UserID'])) {
     $row = mysqli_fetch_assoc($result);
 
 } else if (isset($_POST['but_update'])) {
-    $insertsql = "UPDATE `users` SET `UserName`='" . $_POST['UserName'] . "', `UserEmail`='" . $_POST['UserEmail'] . "' WHERE `UserID`=".$_POST['UserID'];
+    $insertsql = "UPDATE `users` SET `UserName`='" . $_POST['UserName'] . "', `UserEmail`='" . $_POST['UserEmail'] . "', `UserPasswd`='" . $_POST['UserPasswd'] . "' WHERE `UserID`=".$_POST['UserID'];
 
 
     $result = mysqli_query($virtual_con, $insertsql);
@@ -34,6 +34,11 @@ if (isset($_GET['UserID'])) {
     <div class="form-group">
         <label for="UserName">User Name</label>
         <input name="UserName" type="text" value="<?php echo $row['UserName']; ?>" />
+    </div>
+    </div>
+    <div class="form-group">
+        <label for="UserPasswd">User Password</label>
+        <input name="UserPasswd" type="text" value="<?php echo $row['UserPasswd']; ?>" />
     </div>
     </div>
     <div class="form-group">
