@@ -94,7 +94,9 @@ $title = "London Race";
           </nav>
         <?php
         } else {
-          echo "Your login is unsuccessful";
+          $msg111 = "Your login is unsuccessful.";
+          $to111 = 'index.php';
+          goto2($to111, $msg111);
         }
       } else {
 
@@ -439,9 +441,9 @@ $title = "London Race";
       </div>
     </section><!-- End Team Section -->
     <?php
-    if (isset($_SESSION['UserName'])) {
-    } else if (isset($_GET['UserName'])) {
+    if (isset($_GET['UserName'])) {
     } else {
+
     ?>
       <!-- ======= Pricing Section ======= -->
       <section id="pricing" class="contact">
@@ -450,7 +452,7 @@ $title = "London Race";
           <div class="section-title">
             <h2><?php echo $menu6 ?></h2>
             <?php
-            $RegSectionStr = "Regester here so you can get the latest news about the race."
+            $RegSectionStr = "Register here so you can get the latest news about the race."
 
             ?>
             <p><?php echo $RegSectionStr ?></p>
@@ -466,10 +468,10 @@ $title = "London Race";
                 $to = "index.php";
                 if ($result != NULL) {
                   //delete  Success
-                  $msg = "Thank you for regestring";
+                  $msg = "Thank you for registering";
                 } else {
                   //delete failure
-                  $msg = "Regester was not successful";
+                  $msg = "Register was not successful";
                 }
                 goto2($to, $msg);
               } else {
@@ -501,9 +503,6 @@ $title = "London Race";
 
               <?php } ?>
             </div>
-
-
-
           </div>
         </div>
       </section>
@@ -557,7 +556,7 @@ $title = "London Race";
               $maxval1 = $row['m'] + 3;
               $insertsql = "insert into messages (mUserID, mUserName, mUserSubject, mUserEmail, mUserMessage) Values ('" . $maxval1 . "', '" . $_POST['mUserName'] . "', '" . $_POST['mUserSubject'] . "', '" . $_POST['mUserEmail'] . "', '" . $_POST['mUserMessage'] . "')";
               $result = mysqli_query($virtual_con, $insertsql);
-              $to = "Index.php";
+              $to = "index.php";
               if ($result != NULL) {
                 //delete  Success
                 $msg = "Your message has been sent. Thank you!";

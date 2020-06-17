@@ -24,5 +24,8 @@ function gotoInterface($to){
 function goto2 ($to,$Message){
 	echo "<script language=\"JavaScript\">alert(\"".$Message."\") \n window.location = \"".$to."\"</script>";
 }
+function goto3 ($Message){
+	echo "<script language=\"JavaScript\">alert(\"".$Message."\")";
+}
 
 ?>
