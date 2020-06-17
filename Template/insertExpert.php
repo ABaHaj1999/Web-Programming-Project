@@ -50,7 +50,7 @@ if (isset($_POST['but_upload'])) {
     <form method="post" action="" enctype='multipart/form-data'>
         <div class="form-group">
             <label for="ExpertID">Expert ID</label>
-            <input readonly name="ExpertID" type="text" value="<?php echo ($maxval + 3); ?>" />
+            <input readonly name="ExpertID" type="text" value="<?php echo ($maxval + 1); ?>" />
         </div>
         </div>
         <div class="form-group">
