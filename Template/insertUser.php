@@ -25,7 +25,7 @@ if (isset($_POST['but_upload'])) {
     <form method="post" action="">
         <div class="form-group">
             <label for="UserID">User ID</label>
-            <input readonly name="UserID" type="text" value="<?php echo ($maxval + 1); ?>" />
+            <input readonly name="UserID" type="text" value="<?php echo ($maxval + 3); ?>" />
         </div>
         <div class="form-group">
             <label for="UserName">User Name</label>
