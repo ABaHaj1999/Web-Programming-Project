@@ -4,5 +4,5 @@ $content='';
 $hostname='localhost';
 $database='webproject';
 $userdb='root';
-$passwd='';
+$passwd='123';
  ?>

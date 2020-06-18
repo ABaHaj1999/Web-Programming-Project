@@ -1,6 +1,6 @@
 <?php
 include("config/all.php");
-$con = mysqli_connect("localhost", "root", "", "webproject");
+$con = mysqli_connect("localhost", "root", "123", "webproject");
 
 if (isset($_POST['but_upload'])) {
     
