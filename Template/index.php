@@ -3,7 +3,7 @@
 
 <?php
 require_once('config/all.php');
-$virtual_con = mysqli_connect("localhost", "root", "", "webproject");
+// $virtual_con = mysqli_connect("localhost", "root", "", "webproject");
 $title = "London Race";
 
 ?>
@@ -663,7 +663,7 @@ $title = "London Race";
           <br>
           Abdulaziz Abdulrahman Awad Ba Haj <strong><span>A18CS4057</span></strong>.
           <br>
-          Abdulaziz Abdulrahman Awad Ba Haj <strong><span>A18CS4057</span></strong>.
+          Ahnaf Ahmed Arabee <strong><span>A18CS4006</span></strong>.
         </div>
 
         <div class="credits">
